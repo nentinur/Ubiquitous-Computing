@@ -52,3 +52,16 @@ Sensor:
 -	GPS: Modul GPS UBlox NEO-6M. Penjelasan: Modul GPS ini cukup populer dan mudah digunakan serta menyediakan data posisi yang akurat dan dapat diintegrasikan dengan mikrokontroler seperti Arduino
 
 ### User Experience (UX) Design
+![1](daftar.png)
+![2](daftar-berhasil.png)
+![3](login.png)
+![4](home.png)
+![5](profile.png)
+![6](booking.png)
+![7](pilih-jurusan.png)
+![8](pilih-bus.png)
+![9](isi-booking.png)
+![10](booking-berhasil.png)
+![11](riwayat.png)
+![12](tracking.png)
+![13](tombol-login.png)
