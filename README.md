@@ -37,9 +37,9 @@ Mobile software development: waterfall
 Edge software development: waterfall
 
 ### Struktur data
- 
+![struktur data]([struktur data-gobus.drawio.png](https://github.com/nentinur/Ubiquitous-Computing/blob/main/struktur%20data-gobus.drawio.png))
 ### Arsitektur sistem
- 
+![arsitektur sistem](https://github.com/nentinur/Ubiquitous-Computing/blob/main/arsitektur%20sitem_ubikom.drawio.png)
 ### Deskripsi teknologi
 Mesin komputasi:
 -	Edge Server: Arduino. Penjelasan: Karena Arduino adalah mikrokontroller yang sederhana dan mudah dioperasikan serta memiliki dukungan komunitas yang cukup besar
