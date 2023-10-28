@@ -71,11 +71,22 @@ Mesin komputasi:
 
 ### User Experience (UX) Design
 
-![1](img/home.png)
-![2](img/booking.png)
-![3](img/pilih-jurusan.png)
-![4](img/pilih-bus.png)
-![5](img/isi-booking.png)
-![6](img/booking-berhasil.png)
-![7](img/riwayat.png)
-![8](img/tracking.png)
+| No | Tindakan pengguna | Tampilan Aplikasi |
+| --- | --- | --- |
+| 1 | Pertama kali membuka aplikasi | ![halaman home](img/home.png) |
+| 2 | Klik pada tombol "BOOKING TIKET" (sebelum login | ![tombol login](img/tombol-login.png) |
+| 3 | Klik pada tombol "LOGIN" | ![halaman login](img/login.png) |
+| 4 | Klik pada tombol "DAFTAR" | ![halaman daftar](img/daftar.png) |
+| 5 | Berhasil mendaftar | ![daftar berhasil](img/daftar-berhasil.png) |
+| 6 | Klik pada tombol "OK " / "LOGIN" | ![halaman login](img/login.png) |
+| 7 | Berhasil login | ![halaman login](img/home.png) |
+| 8 | Klik pada tombol "BOOKING TIKET" | ![halaman pilih jurusan](img/pilih-jurusan.png) |
+| 9 | Klik pada salah satu jurusan bus | ![halaman pilih bus](img/pilih-bus.png) |
+| 10 | Klik pada salah satu pilihan bus | ![halaman booking](img/isi-booking.png) |
+| 11 | klik pada tombol "BOOKING" | ![berhasil loin](img/booking-berhasil.png) |
+| 12 | Klik tombol "YA" | ![halaman riwayat](img/riwayat.png) |
+| 13 | Klik Riwayat pesanan teratas | ![halaman tracking](img/tracking.png) |
+| 14 | Klik pada tombol "HUBUNGI SOPIR" | Redirect ke Whatsapp |
+| 15 | Klik ikon riwayat | ![halaman riwayat](img/riwayat.png) |
+| 16 | Klik ikon profil | ![halaman profil](img/profile.png) |
+| 17 | Klik tombol "LOGOUT" | ![tombol logout](img/logout.png) |
