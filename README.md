@@ -45,11 +45,11 @@ Sensor:
 
 ### Struktur data
 
-![struktur data](https://github.com/nentinur/Ubiquitous-Computing/blob/main/struktur%20data-gobus.drawio.png)
+![struktur data](img/struktur%20data-gobus.drawio.png)
 
 ### Arsitektur sistem
 
-![arsitektur sistem](https://github.com/nentinur/Ubiquitous-Computing/blob/main/arsitektur%20sitem_ubikom.drawio.png)
+![arsitektur sistem](img/arsitektur%20sitem_ubikom.drawio.png)
 
 ### Deskripsi teknologi
 
@@ -79,3 +79,4 @@ Mesin komputasi:
 ![11](img/riwayat.png)
 ![12](img/tracking.png)
 ![13](img/tombol-login.png)
+![14](img/logout.png)
