@@ -4,7 +4,7 @@
 
 ### Latar belakang
 
-Transportasi umum, penggunaan transpotasi umum memainkan peran penting dalam mobilitas perkotaan dan konektivitas masyarakat. Bus menjadi salah satu sarana transportasi umum yang cukup banyak digunakan oleh masyarakat. Salah satu manfaat penggunaan bus ini adalah untuk mengurangi masalah kemacetan, namun masih banyak masyarakat yang lebih memilih menggunakan kendaraan pribadi dibanding kendaraan umum, dan salah satu alasannya yaitu masalah kenyamanan.
+Transportasi umum memainkan peran penting dalam mobilitas perkotaan dan konektivitas masyarakat. Bus menjadi salah satu sarana transportasi umum yang cukup banyak digunakan oleh masyarakat. Salah satu manfaat penggunaan bus ini adalah untuk mengurangi masalah kemacetan, namun masih banyak masyarakat yang lebih memilih menggunakan kendaraan pribadi dibanding kendaraan umum, dan salah satu alasannya yaitu masalah kenyamanan.
 
 Salah satu penyebab ketidaknyamanan dalam menggunakan bus adalah terkait ketidakpastian jadwal keberangkatan bus. Terkadang bus tidak berangkat tepat waktu sesuai jadwal keberangkatan yang ada, hal ini mengakibatkan penumpang jadi ketinggalan bus. Penumpang yang sudah jauh-jauh datang ke terminal harus menunggu lama untuk jadwal keberangkatan selanjutnya karena tidak tahu bus di jadwal keberangaktan itu ternayata sudah berangat. Begitu pula penumpang yang menunggu bus di halte atau pinggir jalan, harus menunggu dalam ketidakpastian, apakah bus yang ditunggunya sudah lewat atau belum. 
 
