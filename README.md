@@ -1,16 +1,18 @@
 # PROJECT UBICOM
 
-## APLIKASI TRACKING BUS REALTIME DENGAN GPS
+## APLIKASI PREDIKSI WAKTU KEDATANGAN BUS DAN PELACAKAN POSISI BUS
 
 ### Latar belakang
 
 Transportasi umum memainkan peran penting dalam mobilitas perkotaan dan konektivitas masyarakat. Bus menjadi salah satu sarana transportasi umum yang cukup banyak digunakan oleh masyarakat. Salah satu manfaat penggunaan bus ini adalah untuk mengurangi masalah kemacetan, namun masih banyak masyarakat yang lebih memilih menggunakan kendaraan pribadi dibanding kendaraan umum, dan salah satu alasannya yaitu masalah kenyamanan.
 
-Salah satu penyebab ketidaknyamanan dalam menggunakan bus adalah terkait ketidakpastian jadwal keberangkatan bus. Terkadang bus tidak berangkat tepat waktu sesuai jadwal keberangkatan yang ada, hal ini mengakibatkan penumpang jadi ketinggalan bus. Penumpang yang sudah jauh-jauh datang ke terminal harus menunggu lama untuk jadwal keberangkatan selanjutnya karena tidak tahu bus di jadwal keberangaktan itu ternayata sudah berangat. Begitu pula penumpang yang menunggu bus di halte atau pinggir jalan, harus menunggu dalam ketidakpastian, apakah bus yang ditunggunya sudah lewat atau belum. 
+Salah satu penyebab ketidaknyamanan dalam menggunakan bus adalah terkait ketidakpastian jadwal keberangkatan bus. Terkadang bus tidak berangkat tepat waktu sesuai jadwal keberangkatan yang ada, hal ini mengakibatkan penumpang tertinggal bus maupun menunggu bus terlalu lama tanpa kepastian. 
 
-Untuk mengatasi masalah tersebut dibutuhkan suatu sistem yang dapat melakukan pelacakan posisi bus, agar penumpang bisa tahu keberadaan bus yang ditujunya sudah sampai mana, sudah berangkat ataukah belum, dan sampai halte jam berapa. Sehingga penumpang tidak perlu khawatir akan ketinggalan bus, karena aplikasi akan memberi informasi posisi bus dan memberikan estimasi kedatangan bus kepada penumpang.
+Untuk mengatasi masalah tersebut dibutuhkan suatu sistem yang dapat melakukan prediksi waktu kedatangan bus dan pelacakan posisi bus, agar penumpang bisa tahu keberadaan bus yang ditujunya sudah sampai mana, sudah berangkat ataukah belum, dan sampai halte jam berapa. Sehingga penumpang tidak perlu khawatir akan ketinggalan bus, karena aplikasi akan memberi informasi posisi bus dan memberikan estimasi kedatangan bus kepada penumpang.
 
-Aplikasi tracking bus dengan GPS (Global Positioning System) ini mampu melakukan pelacakan posisi bus dengan memanfaatkan perangkat GPS yang integrasikan di dalam bus dan sistem IoT (Internet of Things) untuk melaporkan posisi bus, sehingga pengguna dapat memantau secara langsung dimana posisi bus berada. Penggunaan perangkat GPS sendiri dipilih karena tidak semua sopir bus/kenek/pihak pengoperasi di dalam bus memiliki ponsel atau smartphone yang mendukung. 
+Aplikasi prediksi waktu kedatangan bus dan pelacakan posisi bus ini mampu melakukan pelacakan posisi bus dengan memanfaatkan teknologi GPS yang terintegrasi dalam perangkat telepon pintar, melaporkan posisi bus, sehingga pengguna dapat memantau secara langsung dimana posisi bus berada, dan juga memberikan estimasi waktu berapa lama lagi bus akan tiba di lokasi tempat pengguna menunggu bus.
+
+Aplikasi yang dibangun terdiri dari 2 versi yang berbeda, yaitu versi sopir dan penumpang. Aplikasi versi sopir digunakan oleh pihak operasional bus untuk mengirimkan data lokasi terkini bus ke server, sedangkan aplikasi versi penumpang digunakna oleh penumpang untuk memantau posisi bus dan melihat prediksi waktu kedatangan bus
 
 ### Branding
 
@@ -24,7 +26,7 @@ Campaign: Memberikan kemudahan dalam menggunakan kendaraan umum, naik bus tanpa 
 
 Target user: usia 10+, pengguna kendaraan umum
 
-User experience theme: informatif dan mudah digunakan
+User experience theme: informatif dan mudah digunakan, optimal, memberikan informasi seakurat mungkin
 
 ### User Story
 
@@ -33,17 +35,16 @@ User experience theme: informatif dan mudah digunakan
 | sistem  | Mengirim lokasi terkini bus                               | Bisa membaca titik koordinat                                  | ⭐⭐⭐⭐⭐ |
 | sistem  | Menampilkan posisi bus di peta                            | Bisa menempatkan koordinat di peta dengan akurat              | ⭐⭐⭐⭐⭐ |
 | sistem  | Melakukan tracking secara realtime terhadap posisi bus    | Bisa memperbarui titik koordinat bus secara berkala           | ⭐⭐⭐⭐⭐ |
-| sistem  | Melakukan pemesanan tiket online                          | Bisa melakukan transaksi pembelian tiket di aplikasi          | ⭐⭐⭐⭐⭐ |
+| sistem  | Melakukan pemesanan tiket online                          | Bisa melakukan transaksi pembelian tiket di aplikasi          | ⭐⭐⭐⭐ |
 | sistem  | Menampilkan posisi bus yang dekat dengan pengguna         | Bisa membaca titik koordinat lebih dari 1 bus                 | ⭐⭐⭐      |
-| sistem  | Memperkirakan waktu kedatangan bus kepada pengguna        | Bisa menghitung estimasi waktu terhadap jarak yang ditempuh bus untuk sampai ke pengguna | ⭐⭐⭐⭐    |
+| sistem  | Memperkirakan waktu kedatangan bus kepada pengguna        | Bisa menghitung estimasi waktu terhadap jarak yang ditempuh bus untuk sampai ke pengguna | ⭐⭐⭐⭐⭐ |
 
 ### Metode dan algoritma
 
 Sensor:
 
-- GPS: Modul GPS UBlox NEO-6M. Penjelasan: Modul GPS ini cukup populer dan mudah digunakan serta menyediakan data posisi yang akurat dan dapat diintegrasikan dengan mikrokontroler seperti Arduino.
-  Mobile software development: waterfall
-  Edge software development: waterfall
+- GPS: GPS built-in di perangkat android.
+  Mobile software development: prototype
 
 ### Struktur data
 
@@ -53,21 +54,19 @@ Sensor:
 
 ![arsitektur sistem](img/arsitektur%20sitem_ubikom.drawio.png)
 
-Sensor yang berupa modul GPS akan dihubungkan dengan mikrokontroller Arduino, sensor ini akan menangkap info posisi, kemudian arduino akan mengolah informasi itu dan mengirimkannya ke server melalui NodeMCU dan juga broker MQTT, selanjutnya server akan mengolah informasi lokasi atau koordinat posisi bus itu, seperti mengubahnya dalam bentuk peta dan melakukan perhitungan untuk memperkirakan waktu tiba bus, informasi yang sudah diolah ini dibungkus dalam bentuk API yang nantinya akan dikonsumsi oleh pengguna. di sisi lain, aplikasi yang digunakan oleh pengguna akan melakukan request terhadap server berupa informasi lokasi bus dan estimasi waktu bus ataupun request transaksi pemesanan tiket bus, setelah itu server akan memberikan respon kepada pengguna berupa informasi yang sudah diolah tadi.
+Aplikasi versi sopir (aplikasi yang ditujuakan untuk digunakan pihak bus) akan mengaktifkan sensor GPS yang tersedia di perangkat telepon pintar dan difungsikan sebagai pengirim data posisi terkini bus, aplikasi akan tetap berjalan dilatar belakang agar tetap senantiasa mengirimkan data posisi terkini tanpa terputus. Data posisi bus akan ditangani menggunakan protokol komunikasi MQTT yang selanjutnya akan dikirim ke server. Aplikasi versi penumpang (aplikasi yang ditujukan untuk calon penumpang bus) akan mengambil data lokasi terkini bus yang ada di server dan menampilkannya dalam maps agar pengguna dapat mengetahui posisi bus, kemudian dari data yang telah diolah menggunakan algoritma machine learning, pengguna akan mendapatkan prediksi atau estimasi waktu kedatangan bus.
 
 ### Deskripsi teknologi
 
 Mesin komputasi:
 
-- Edge Server: Arduino, Karena Arduino adalah mikrokontroller yang sederhana dan mudah dioperasikan serta memiliki dukungan komunitas yang cukup besar
-- Cloud Server: GCP: Google Compute Engine untuk mesin komputasinya, karena sangat fleksibel dan mesin komputasinya dapat disesuaikan dengan kebutuhan. Google Cloud Dataflow, untuk mengelola aliran data secara realtime dan mengolah serta menganalisis data yang diterima dari perangkat IoT.
-- Smartphone: Android & iPhone, karena Android & iPhone merupakan smartphone yang umum dan banyak digunakan saat ini.
+- Cloud Server: Google Cloud Dataflow, untuk mengelola aliran data secara realtime dan mengolah serta menganalisis data yang diterima dari perangkat IoT.
+- Smartphone: Android, karena Android merupakan smartphone yang umum dan banyak digunakan oleh mayoritas orang saat ini.
   Software development:
-- PWA/Front-end Developmnet: React.js, karena React.js merupakan library javascript yang umum digunakan dalam pembangunan aplikasi web maupun mobile.
+- Mobile Developmnet: Flutter, Flutter dipilih karena kemampuannya dalam pengembangan cross-platform, antarmuka pengguna yang kaya, kinerja tinggi, fitur Hot Reload, dukungan komunitas yang kuat, dan sifat open source-nya.
 - Backend Development: Express.js, karena Express.js adalah salah satu library backend yang cukup terkenal dan banyak digunakan oleh backend developer.
-- Koneksi: NodeMCU / NB-IoT.
   Sensor:
-- GPS: Modul GPS UBlox NEO-6M. Penjelasan: Modul GPS ini cukup populer dan mudah digunakan serta menyediakan data posisi yang akurat dan dapat diintegrasikan dengan mikrokontroler seperti Arduino
+- GPS: GPS built-in smartphone, alasan penggunaan GPS built-in adalah untuk menekan pengeluaran membeli perangkat IoT, lebih sederhana, dan mudah dalam pemeliharaan, karena hanya berupa software.
 
 ### User Experience (UX) Design
 
