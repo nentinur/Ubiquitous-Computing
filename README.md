@@ -52,9 +52,9 @@ Sensor:
 
 ### Arsitektur sistem
 
-![arsitektur sistem](img/arsitektur%20sitem_ubikom.drawio.png)
+![arsitektur sistem](img/arsitektur_sistem_ubikom.png)
 
-Aplikasi versi sopir (aplikasi yang ditujuakan untuk digunakan pihak bus) akan mengaktifkan sensor GPS yang tersedia di perangkat telepon pintar dan difungsikan sebagai pengirim data posisi terkini bus, aplikasi akan tetap berjalan dilatar belakang agar tetap senantiasa mengirimkan data posisi terkini tanpa terputus. Data posisi bus akan ditangani menggunakan protokol komunikasi MQTT yang selanjutnya akan dikirim ke server. Aplikasi versi penumpang (aplikasi yang ditujukan untuk calon penumpang bus) akan mengambil data lokasi terkini bus yang ada di server dan menampilkannya dalam maps agar pengguna dapat mengetahui posisi bus, kemudian dari data yang telah diolah menggunakan algoritma machine learning, pengguna akan mendapatkan prediksi atau estimasi waktu kedatangan bus.
+Aplikasi versi sopir (aplikasi yang ditujuakan untuk digunakan pihak bus) akan mengaktifkan sensor GPS yang tersedia di perangkat telepon pintar dan difungsikan sebagai pengirim data posisi terkini bus, aplikasi akan tetap berjalan dilatar belakang agar tetap senantiasa mengirimkan data posisi terkini tanpa terputus. Aplikasi versi penumpang (aplikasi yang ditujukan untuk calon penumpang bus) akan mengambil data lokasi terkini bus yang ada di server dan menampilkannya dalam maps agar pengguna dapat mengetahui posisi bus, kemudian dari data yang telah diolah menggunakan algoritma machine learning, pengguna akan mendapatkan prediksi atau estimasi waktu kedatangan bus.
 
 ### Deskripsi teknologi
 
