@@ -47,11 +47,11 @@ Sensor:
 
 ### Struktur data
 
-![struktur data](img/struktur%20data-gobus.drawio.png)
+![struktur data](img/struktur%20data.drawio.png)
 
 ### Arsitektur sistem
 
-![arsitektur sistem](img/arsitektur_sistem_ubikom.png)
+![arsitektur sistem](img/arsitektur%20sistem_ubikom.drawio.png)
 
 Sensor yang berupa modul GPS akan dihubungkan dengan mikrokontroller ESP8266, sensor ini akan menangkap infomasi koordinat bus, kemudian mikrokontroller, akan mengirimkan akan mengolah informasi tersebut menjadi format yang diinginkan dan melakukan publish pada broker MQTT, selanjutnya server/backend akan menangkap data yang dikirimkan ke MQTT dan menyimpannya dalam database, kemudian mengolahnya untuk memperkirakan waktu kedatangan bus, informasi yang sudah diolah ini dibungkus dalam bentuk API yang nantinya akan dikonsumsi oleh web yang diakses pengguna. di sisi lain, aplikasi yang digunakan oleh pengguna akan melakukan request terhadap server berupa informasi lokasi bus dan estimasi waktu bus ataupun request transaksi pemesanan tiket bus, setelah itu server akan memberikan respon kepada pengguna berupa informasi yang sudah diolah tadi.
 
