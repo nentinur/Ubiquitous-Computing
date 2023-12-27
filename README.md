@@ -10,9 +10,7 @@ Salah satu penyebab ketidaknyamanan dalam menggunakan bus adalah terkait ketidak
 
 Untuk mengatasi masalah tersebut dibutuhkan suatu sistem yang dapat melakukan prediksi waktu kedatangan bus dan pelacakan posisi bus, agar penumpang bisa tahu keberadaan bus yang ditujunya sudah sampai mana, sudah berangkat ataukah belum, dan sampai halte jam berapa. Sehingga penumpang tidak perlu khawatir akan ketinggalan bus, karena aplikasi akan memberi informasi posisi bus dan memberikan estimasi kedatangan bus kepada penumpang.
 
-Aplikasi prediksi waktu kedatangan bus dan pelacakan posisi bus ini mampu melakukan pelacakan posisi bus dengan memanfaatkan teknologi GPS yang terintegrasi dalam perangkat telepon pintar, melaporkan posisi bus, sehingga pengguna dapat memantau secara langsung dimana posisi bus berada, dan juga memberikan estimasi waktu berapa lama lagi bus akan tiba di lokasi tempat pengguna menunggu bus.
-
-Aplikasi yang dibangun terdiri dari 2 versi yang berbeda, yaitu versi sopir dan penumpang. Aplikasi versi sopir digunakan oleh pihak operasional bus untuk mengirimkan data lokasi terkini bus ke server, sedangkan aplikasi versi penumpang digunakna oleh penumpang untuk memantau posisi bus dan melihat prediksi waktu kedatangan bus
+Aplikasi prediksi waktu kedatangan bus dan pelacakan posisi bus ini mampu melakukan pelacakan posisi bus dengan memanfaatkan perangkat GPS yang integrasikan di dalam bus dan sistem IoT (Internet of Things) untuk melaporkan posisi bus, sehingga pengguna dapat memantau secara langsung dimana posisi bus berada, dan juga memberikan estimasi waktu berapa lama lagi bus akan tiba di lokasi tempat pengguna menunggu bus.
 
 ### Branding
 
@@ -43,8 +41,9 @@ User experience theme: informatif dan mudah digunakan, optimal, memberikan infor
 
 Sensor:
 
-- GPS: GPS built-in di perangkat android.
-  Mobile software development: prototype
+- GPS: Modul GPS UBlox NEO-6M. Penjelasan: Modul GPS ini cukup populer dan mudah digunakan serta menyediakan data posisi yang akurat dan dapat diintegrasikan dengan mikrokontroler seperti Arduino.
+- Mobile software development: prototype
+- Edge software development: prototype
 
 ### Struktur data
 
@@ -54,19 +53,21 @@ Sensor:
 
 ![arsitektur sistem](img/arsitektur_sistem_ubikom.png)
 
-Aplikasi versi sopir (aplikasi yang ditujuakan untuk digunakan pihak bus) akan mengaktifkan sensor GPS yang tersedia di perangkat telepon pintar dan difungsikan sebagai pengirim data posisi terkini bus, aplikasi akan tetap berjalan dilatar belakang agar tetap senantiasa mengirimkan data posisi terkini tanpa terputus. Aplikasi versi penumpang (aplikasi yang ditujukan untuk calon penumpang bus) akan mengambil data lokasi terkini bus yang ada di server dan menampilkannya dalam maps agar pengguna dapat mengetahui posisi bus, kemudian dari data yang telah diolah menggunakan algoritma machine learning, pengguna akan mendapatkan prediksi atau estimasi waktu kedatangan bus.
+Sensor yang berupa modul GPS akan dihubungkan dengan mikrokontroller ESP8266, sensor ini akan menangkap infomasi koordinat bus, kemudian mikrokontroller, akan mengirimkan akan mengolah informasi tersebut menjadi format yang diinginkan dan melakukan publish pada broker MQTT, selanjutnya server/backend akan menangkap data yang dikirimkan ke MQTT dan menyimpannya dalam database, kemudian mengolahnya untuk memperkirakan waktu kedatangan bus, informasi yang sudah diolah ini dibungkus dalam bentuk API yang nantinya akan dikonsumsi oleh web yang diakses pengguna. di sisi lain, aplikasi yang digunakan oleh pengguna akan melakukan request terhadap server berupa informasi lokasi bus dan estimasi waktu bus ataupun request transaksi pemesanan tiket bus, setelah itu server akan memberikan respon kepada pengguna berupa informasi yang sudah diolah tadi.
 
 ### Deskripsi teknologi
 
 Mesin komputasi:
 
-- Cloud Server: Google Cloud Dataflow, untuk mengelola aliran data secara realtime dan mengolah serta menganalisis data yang diterima dari perangkat IoT.
-- Smartphone: Android, karena Android merupakan smartphone yang umum dan banyak digunakan oleh mayoritas orang saat ini.
+- Edge Server: Arduino, Karena Arduino adalah mikrokontroller yang sederhana dan mudah dioperasikan serta memiliki dukungan komunitas yang cukup besar
+- Cloud Server: GCP: Google Compute Engine untuk mesin komputasinya, karena sangat fleksibel dan mesin komputasinya dapat disesuaikan dengan kebutuhan. Google Cloud Dataflow, untuk mengelola aliran data secara realtime dan mengolah serta menganalisis data yang diterima dari perangkat IoT.
+- Smartphone: Android & iPhone, karena Android & iPhone merupakan smartphone yang umum dan banyak digunakan saat ini.
   Software development:
-- Mobile Developmnet: Flutter, Flutter dipilih karena kemampuannya dalam pengembangan cross-platform, antarmuka pengguna yang kaya, kinerja tinggi, fitur Hot Reload, dukungan komunitas yang kuat, dan sifat open source-nya.
+- Front-end Developmnet: React.js, karena React.js merupakan library javascript yang umum digunakan dalam pembangunan aplikasi web maupun mobile.
 - Backend Development: Express.js, karena Express.js adalah salah satu library backend yang cukup terkenal dan banyak digunakan oleh backend developer.
+- Koneksi: NodeMCU (ESP8266).
   Sensor:
-- GPS: GPS built-in smartphone, alasan penggunaan GPS built-in adalah untuk menekan pengeluaran membeli perangkat IoT, lebih sederhana, dan mudah dalam pemeliharaan, karena hanya berupa software.
+- GPS: Modul GPS UBlox NEO-6M. Penjelasan: Modul GPS ini cukup populer dan mudah digunakan serta menyediakan data posisi yang akurat dan dapat diintegrasikan dengan mikrokontroler.
 
 ### User Experience (UX) Design
 
