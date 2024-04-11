@@ -69,12 +69,6 @@ Mesin komputasi:
   Sensor:
 - GPS: Modul GPS UBlox NEO-6M. Penjelasan: Modul GPS ini cukup populer dan mudah digunakan serta menyediakan data posisi yang akurat dan dapat diintegrasikan dengan mikrokontroler.
 
-### Proposal
-[link GDrive](https://drive.google.com/file/d/1wKlgM3tuoAdor_XmOFVOpPusEs07ziUn/view?usp=sharing)
-
-### Demo Youtube 
-[link demo youtube](https://youtu.be/GodhT2hO3ZI)
-
 ### User Experience (UX) Design
 
 | No | Tindakan pengguna | Tampilan Aplikasi |
